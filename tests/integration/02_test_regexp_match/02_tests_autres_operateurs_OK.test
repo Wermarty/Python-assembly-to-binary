@@ -1,0 +1,144 @@
+
+
+# TEST START ###################################################################
+# Test args              : 'a+ccd+' 'accdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'accdefg' is a+ccd+, next: 'efg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a+ccd+' 'ccdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'ccdefg' is *NOT* a+ccd+.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a+c*d+' 'accdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'accdefg' is a+c*d+, next: 'efg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a+c*d+' 'adefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'adefg' is a+c*d+, next: 'efg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a+c*d+' 'ccdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'ccdefg' is *NOT* a+c*d+.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a?c+' 'accdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'accdefg' is a?c+, next: 'defg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a?c*' 'ccdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'ccdefg' is a?c*, next: 'defg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^ab' 'cbefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'cbefg' is ^ab, next: 'efg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^ab' 'abefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abefg' is *NOT* ^ab.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a^b*' 'acefgb'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'acefgb' is a^b*, next: 'b'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a^b*' 'abefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abefg' is a^b*, next: 'befg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\**fin' '*****fin_abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '*****fin_abc' is \**fin, next: '_abc'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[+\*fin' '[[fin_abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '[[fin_abc' is *NOT* \[+\*fin.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[+\*fin' 'fin_abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'fin_abc' is *NOT* \[+\*fin.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[+\*fin' '[[*fin_abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '[[*fin_abc' is \[+\*fin, next: '_abc'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'debut\?*fin' 'debut???fin_abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'debut???fin_abc' is debut\?*fin, next: '_abc'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

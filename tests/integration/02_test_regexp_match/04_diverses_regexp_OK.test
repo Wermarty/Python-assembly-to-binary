@@ -1,0 +1,144 @@
+
+
+# TEST START ###################################################################
+# Test args              : ''   ''
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ''   'abc'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'abc'   ''
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '' is *NOT* abc.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\.interned'   '.internedfin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '.internedfin' is \.interned, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\.interned'   'internedfin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'internedfin' is *NOT* \.interned.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '"^["]*"'     '"abcdef"'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '"abcdef"' is "^["]*", END: ''.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '"[^"]*"'     '"abcdef"fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '"abcdef"fin' is "[^"]*", next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '"[^"]*"'     '"chaineaccentuéeàèû"fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '"chaineaccentuéeàèû"fin' is "[^"]*", next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '0+'   '000009'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '000009' is 0+, next: '9'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '&*'  '&&&&*+*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '&&&&*+*' is &*, next: '*+*'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\+'  '\\\\\fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '\\\\\fin' is \\+, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\*'  'error'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'error' is \\*, next: 'error'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\?'  'fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'fin' is \\?, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\?'  '?fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '?fin' is \\?, next: '?fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\?'  '\fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '\fin' is \\?, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\?'  'error'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'error' is \\?, next: 'error'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

@@ -1,0 +1,37 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "tuple.py"
+.set name		 "<module>"
+.set stack_size		 3
+.set arg_count		 0
+
+.interned
+	"a"
+	"<module>"
+
+.consts
+	1
+	2
+	3
+	None
+	( 1 2 3 )
+
+.names
+	"a"
+
+.text
+.line 1
+	LOAD_CONST            4	# ( 1 2 3 )
+	STORE_NAME            0	# "a"
+.line 2
+	LOAD_NAME             0	# "a"
+	PRINT_ITEM
+	PRINT_NEWLINE
+	LOAD_CONST            3	# None
+	RETURN_VALUE
+
+# Disassembled Mon Nov  1 05:15:41 2021

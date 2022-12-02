@@ -1,0 +1,8 @@
+../../definitionLexeme.txt 03_test_lexer/01_per_type_02_comment_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_03_blanks_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_04_various_basic_lexems_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_05_int_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_06_hex_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_07_label_declaration_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_08_label_usage_OK.pys
+../../definitionLexeme.txt 03_test_lexer/01_per_type_09_strings_OK_1.pys

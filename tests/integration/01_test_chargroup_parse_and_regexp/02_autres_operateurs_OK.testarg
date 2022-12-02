@@ -1,0 +1,28 @@
+# les opérateurs + ? ^ et l'échappement
+# commentaire non testé
+
+'a+'
+
+'1?'
+
+'.+'
+
+'.?'
+
+'.a+'
+
+'^a'
+
+'^ab?'
+
+'^a^b'
+
+'^\n+'
+
+'^[phelma]'
+
+'\n+'
+
+'^.'
+
+'.^'

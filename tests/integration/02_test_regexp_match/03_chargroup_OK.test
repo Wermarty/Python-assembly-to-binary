@@ -1,0 +1,189 @@
+
+
+# TEST START ###################################################################
+# Test args              : '[+\-]?[0-9]' '1234'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '1234' is [+\-]?[0-9], next: '234'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\-+]?[0-9]' '-1234.321'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '-1234.321' is [\-+]?[0-9], next: '234.321'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+\-]?[0-9]?' '1234.12'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '1234.12' is [+\-]?[0-9]?, next: '234.12'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[-/+]?[0-9]' '-a1'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '-a1' is *NOT* [-/+]?[0-9].
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+\-]?[0-9]' '-+1234'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '-+1234' is *NOT* [+\-]?[0-9].
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*^bc?^d+' 'accdefg'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'accdefg' is a*^bc?^d+, next: 'defg'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STOP_CODE'  'STOP_CODEfin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'STOP_CODEfin' is STOP_CODE, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]' 'abcde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abcde' is [a-z], next: 'bcde'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]' '9bcde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '9bcde' is *NOT* [a-z].
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z0-9]' '9bcde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '9bcde' is [a-z0-9], next: 'bcde'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z0-9]*' '9bcde8$'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '9bcde8$' is [a-z0-9]*, next: '$'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z9]' '9bcde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '9bcde' is [a-z9], next: 'bcde'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z\-9]' '-9bcde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '-9bcde' is [a-z\-9], next: '9bcde'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z0-9]' '$b_notOK'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '$b_notOK' is *NOT* [a-z0-9].
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^[a-z]'  'abcdef'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abcdef' is *NOT* ^[a-z].
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^[a-z]'  '9abcdef'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '9abcdef' is ^[a-z], next: 'abcdef'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ \t]*#[^\n]*'      '        #coucou\n\n'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '        #coucou\n\n' is [ \t]*#[^\n]*, END: ''.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ \t]*#[^\n]*'      'abc'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abc' is *NOT* [ \t]*#[^\n]*.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ \t]+'    '         fin'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '         fin' is [ \t]+, next: 'fin'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ \t]+'    'fin      '
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'fin      ' is *NOT* [ \t]+.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\.primitive[0-9]+' '.primitive19fin_avant_9'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '.primitive19fin_avant_9' is \.primitive[0-9]+, next: 'fin_avant_9'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

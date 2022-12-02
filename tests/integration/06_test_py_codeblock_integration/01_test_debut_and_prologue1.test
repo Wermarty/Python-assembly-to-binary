@@ -1,0 +1,939 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_end_of_line_debut0.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+[ERROR 1:0] Unexpected input.
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set1.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+[ERROR 3:0] Unexpected input.
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set2.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+[ERROR 3:4] No blank or Unexpected comment.
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set3.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+[ERROR 6:9] No blank or Unexpected comment.
+Version pyvm : 			62211
+Flags : 			0x40
+<Filename>
+	"test.py", size = 9
+</Filename>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set4.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+[ERROR 6:5] Not the right set-directives.
+Version pyvm : 			62211
+Flags : 			0x40
+<Filename>
+	"test.py", size = 9
+</Filename>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set5.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+[ERROR 7:5] Not the right set-directives.
+Version pyvm : 			62211
+Flags : 			0x40
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set6.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing set-posonly_arg_count
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+Version pyvm : 			62211
+Arg count : 			0
+Stack size : 			2
+Flags : 			0x40
+<Interned>
+	"nothing", size = 9
+	"a", size = 3
+	"<module>", size = 10
+</Interned>
+<Consts>
+	13
+	12
+	"nothing", size = 9
+None
+</Consts>
+<Names>
+	"a", size = 3
+</Names>
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set7.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+Version pyvm : 			62211
+Arg count : 			2
+Stack size : 			2
+Flags : 			0x40
+<Interned>
+	"nothing", size = 9
+	"a", size = 3
+	"<module>", size = 10
+</Interned>
+<Consts>
+	13
+	12
+	"nothing", size = 9
+None
+</Consts>
+<Names>
+	"a", size = 3
+</Names>
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set8.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+Version pyvm : 			62211
+Arg count : 			2
+Stack size : 			2
+Flags : 			0x40
+<Interned>
+	"nothing", size = 9
+	"a", size = 3
+	"<module>", size = 10
+</Interned>
+<Consts>
+	13
+	12
+	"nothing", size = 9
+None
+</Consts>
+<Names>
+	"a", size = 3
+</Names>
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set9.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+Version pyvm : 			62211
+Arg count : 			2
+Stack size : 			2
+Flags : 			0x40
+<Interned>
+	"nothing", size = 9
+	"a", size = 3
+	"<module>", size = 10
+</Interned>
+<Consts>
+	13
+	12
+	"nothing", size = 9
+None
+</Consts>
+<Names>
+	"a", size = 3
+</Names>
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set10.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+[ERROR 10:0] Unexpected input.
+Version pyvm : 			62211
+Arg count : 			2
+Stack size : 			2
+Flags : 			0x40
+<Filename>
+	"test.py", size = 9
+</Filename>
+<Name>
+	"<module>", size = 10
+</Name>
+
+# END Test stdout and stderr
+# TEST END   ###################################################################

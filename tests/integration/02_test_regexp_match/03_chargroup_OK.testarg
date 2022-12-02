@@ -1,0 +1,39 @@
+# tests du sujet
+
+'[+\-]?[0-9]' '1234'
+'[\-+]?[0-9]' '-1234.321'
+'[+\-]?[0-9]?' '1234.12'
+'[-/+]?[0-9]' '-a1'
+
+'[+\-]?[0-9]' '-+1234'
+
+
+'a*^bc?^d+' 'accdefg'
+
+# autres tests divers
+
+'STOP_CODE'  'STOP_CODEfin'
+
+
+'[a-z]' 'abcde'
+'[a-z]' '9bcde'
+
+'[a-z0-9]' '9bcde'
+'[a-z0-9]*' '9bcde8$'
+'[a-z9]' '9bcde'
+'[a-z\-9]' '-9bcde'
+'[a-z0-9]' '$b_notOK'
+
+
+'^[a-z]'  'abcdef'
+'^[a-z]'  '9abcdef'
+
+
+'[ \t]*#[^\n]*'      '        #coucou\n\n'
+'[ \t]*#[^\n]*'      'abc'
+
+
+'[ \t]+'    '         fin'
+'[ \t]+'    'fin      '
+
+'\.primitive[0-9]+' '.primitive19fin_avant_9'

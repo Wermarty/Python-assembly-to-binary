@@ -1,0 +1,108 @@
+
+
+# TEST START ###################################################################
+# Test args              : 'aa'      'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is aa, next: 'bbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'aa'      'abbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'abbbccccddddd' is *NOT* aa.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*'      'aaaaabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aaaaabbbccccddddd' is a*, next: 'bbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*'      'bbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'bbbccccddddd' is a*, next: 'bbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*b*c*'  'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is a*b*c*, next: 'ddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*b*c*'  'bbbaaccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'bbbaaccccddddd' is a*b*c*, next: 'aaccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a.b*'    'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is a.b*, next: 'ccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a.b*'    'aaabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aaabbbccccddddd' is a.b*, next: 'abbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '0.1*'    '0a1ccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '0a1ccccddddd' is 0.1*, next: 'ccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '0.1*'    '0a1ccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of '0a1ccccddddd' is 0.1*, next: 'ccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STORE_FAST' 'STORE___FAIL'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'STORE___FAIL' is *NOT* STORE_FAST.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STORE_FAST' 'STORE_FAST OK'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'STORE_FAST OK' is STORE_FAST, next: ' OK'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

@@ -1,0 +1,25 @@
+# les tests du code fourni dans le sujet
+# commentaire => non testé. Doit etre en début de ligne !
+# les lignes vides sont aussi sautées.
+# chaque ligne donnera lieu à l'exécution du programme pour generer un fichier .test
+# voir :
+#         python3 01_test_outputs.py gt --help
+
+# Tests basiques du code fourni dans le sujet
+
+'aa'
+
+
+'a*'
+
+'a*b*cde'
+
+'aaa*b*c*'
+
+'a*b*c*'
+
+'a.b*'
+
+'ba.b*'
+
+'STORE_FAST'

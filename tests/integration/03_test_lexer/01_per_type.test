@@ -1,0 +1,317 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_02_comment_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:comment] ### COMMENT ABC COMMENT [1:23:newline] 
+ [2:0:comment] ### ANOTHER COMMENT WITH # INSIDE COMMENT [2:41:newline] 
+ [3:0:integer::dec] 1 [3:1:blank]   [3:2:comment] # COMMENT AFTER INT  [3:22:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_03_blanks_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:symbol] blank [1:5:blank]   [1:6:symbol] tabulation [1:16:blank] 	 [1:17:symbol] ne [1:19:symbol] wline [1:24:newline] 
+ [2:0:symbol] END [2:3:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_04_various_basic_lexems_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:newline] 
+ [2:0:comment] # quelques instructions [2:23:newline] 
+ [3:0:insn::0] STOP_CODE [3:9:newline] 
+ [4:0:insn::0] POP_TOP [4:7:newline] 
+ [5:0:insn::0] ROT_TWO [5:7:newline] 
+ [6:0:insn::0] ROT_THREE [6:9:newline] 
+ [7:0:insn::0] DUP_TOP [7:7:newline] 
+ [8:0:insn::0] DUP_TOP [8:7:symbol] _TWO [8:11:newline] 
+ [9:0:insn::0] ROT_FOUR [9:8:newline] 
+ [10:0:insn::0] NOP [10:3:newline] 
+ [11:0:insn::0] UNARY_POSITIVE [11:14:newline] 
+ [12:0:insn::0] UNARY_NEGATIVE [12:14:newline] 
+ [13:0:insn::0] UNARY_NOT [13:9:newline] 
+ [14:0:insn::0] UNARY_CONVERT [14:13:newline] 
+ [15:0:insn::0] UNARY_INVERT [15:12:newline] 
+ [16:0:insn::0] BINARY_POWER [16:12:newline] 
+ [17:0:insn::0] BINARY_MULTIPLY [17:15:newline] 
+ [18:0:insn::0] BINARY_DIVIDE [18:13:newline] 
+ [19:0:insn::0] BINARY_MODULO [19:13:newline] 
+ [20:0:insn::0] BINARY_ADD [20:10:newline] 
+ [21:0:symbol] BINARY_SUBT [21:11:symbol] RAC [21:14:symbol] T [21:15:newline] 
+ [22:0:insn::0] BINARY_SUBSCR [22:13:newline] 
+ [23:0:insn::0] BINARY_FLOOR_DIVIDE [23:19:newline] 
+ [24:0:insn::0] BINARY_TRUE_DIVIDE [24:18:newline] 
+ [25:0:insn::0] INPLACE_FLOOR_DIVIDE [25:20:newline] 
+ [26:0:insn::0] INPLACE_TRUE_DIVIDE [26:19:newline] 
+ [27:0:insn::0] SLICE [27:5:newline] 
+ [28:0:insn::0] SLICE [28:5:symbol] _PLUS_1 [28:12:newline] 
+ [29:0:insn::0] SLICE [29:5:symbol] _PLUS_2 [29:12:newline] 
+ [30:0:insn::0] SLICE [30:5:symbol] _PLUS_3 [30:12:newline] 
+ [31:0:insn::0] STORE_SLICE [31:11:newline] 
+ [32:0:insn::0] STORE_SLICE [32:11:symbol] _PLUS_1 [32:18:newline] 
+ [33:0:insn::0] STORE_SLICE [33:11:symbol] _PLUS_2 [33:18:newline] 
+ [34:0:insn::0] STORE_SLICE [34:11:symbol] _PLUS_3 [34:18:newline] 
+ [35:0:insn::0] DELETE_SLICE [35:12:newline] 
+ [36:0:insn::0] DELETE_SLICE [36:12:symbol] _PLUS_1 [36:19:newline] 
+ [37:0:insn::0] DELETE_SLICE [37:12:symbol] _PLUS_2 [37:19:newline] 
+ [38:0:insn::0] DELETE_SLICE [38:12:symbol] _PLUS_3 [38:19:newline] 
+ [39:0:insn::0] GET_AITER [39:9:newline] 
+ [40:0:insn::0] GET_ANEXT [40:9:newline] 
+ [41:0:insn::0] BEFORE_ASYNC_WITH [41:17:newline] 
+ [42:0:insn::0] BEGIN_FINALLY [42:13:newline] 
+ [43:0:insn::0] END_ASYNC_FOR [43:13:newline] 
+ [44:0:insn::0] GET_YIELD_FROM_ITER [44:19:newline] 
+ [45:0:insn::0] LOAD_BUILD_CLASS [45:16:newline] 
+ [46:0:insn::0] YIELD_FROM [46:10:newline] 
+ [47:0:insn::0] GET_AWAITABLE [47:13:newline] 
+ [48:0:insn::0] WITH_CLEANUP [48:12:symbol] _START [48:18:newline] 
+ [49:0:insn::0] WITH_CLEANUP [49:12:symbol] _FINISH [49:19:newline] 
+ [50:0:insn::0] SETUP_ANNOTATIONS [50:17:newline] 
+ [51:0:symbol] POP_EXC [51:7:symbol] EP [51:9:symbol] T [51:10:newline] 
+ [52:0:insn::1] UNPACK_EX [52:9:newline] 
+ [53:0:insn::1] DELETE_DEREF [53:12:newline] 
+ [54:0:insn::1] CALL_FUNCTION [54:13:symbol] _EX [54:16:newline] 
+ [55:0:insn::1] LIST_APPEND [55:11:newline] 
+ [56:0:insn::1] LOAD_CLASSDEREF [56:15:newline] 
+ [57:0:insn::1] BUILD_LIST [57:10:symbol] _UNPACK [57:17:newline] 
+ [58:0:insn::1] BUILD_MAP [58:9:symbol] _UNPACK [58:16:newline] 
+ [59:0:insn::1] BUILD_MAP [59:9:symbol] _UNPACK_WITH_CALL [59:26:newline] 
+ [60:0:insn::1] BUILD_TUPLE [60:11:symbol] _UNPACK [60:18:newline] 
+ [61:0:insn::1] BUILD_SET [61:9:symbol] _UNPACK [61:16:newline] 
+ [62:0:insn::1] SETUP_ASYNC_WITH [62:16:newline] 
+ [63:0:insn::1] FORMAT_VALUE [63:12:newline] 
+ [64:0:insn::1] BUILD_CONST_KEY_MAP [64:19:newline] 
+ [65:0:insn::1] BUILD_STRING [65:12:newline] 
+ [66:0:insn::1] BUILD_TUPLE [66:11:symbol] _UNPACK_WITH_CALL [66:28:newline] 
+ [67:0:insn::1] LOAD_METHOD [67:11:newline] 
+ [68:0:insn::1] CALL_METHOD [68:11:newline] 
+ [69:0:insn::1] CALL_FINALLY [69:12:newline] 
+ [70:0:insn::1] POP_FINALLY [70:11:newline] 
+ [71:0:newline] 
+ [72:0:insn::0] STORE_MAP [72:9:newline] 
+ [73:0:insn::0] INPLACE_ADD [73:11:newline] 
+ [74:0:symbol] INPLACE_SUBT [74:12:symbol] RAC [74:15:symbol] T [74:16:newline] 
+ [75:0:insn::0] INPLACE_MULTIPLY [75:16:newline] 
+ [76:0:insn::0] INPLACE_DIVIDE [76:14:newline] 
+ [77:0:insn::0] INPLACE_MODULO [77:14:newline] 
+ [78:0:insn::0] STORE_SUBSCR [78:12:newline] 
+ [79:0:symbol] DELETE_SU [79:9:symbol] BS [79:11:symbol] CR [79:13:newline] 
+ [80:0:insn::0] BINARY_LSHIFT [80:13:newline] 
+ [81:0:insn::0] BINARY_RSHIFT [81:13:newline] 
+ [82:0:insn::0] BINARY_AND [82:10:newline] 
+ [83:0:insn::0] BINARY_XOR [83:10:newline] 
+ [84:0:insn::0] BINARY_OR [84:9:newline] 
+ [85:0:insn::0] INPLACE_POWER [85:13:newline] 
+ [86:0:insn::0] GET_ITER [86:8:newline] 
+ [87:0:insn::0] PRINT_EXPR [87:10:newline] 
+ [88:0:insn::0] PRINT_ITEM [88:10:newline] 
+ [89:0:insn::0] PRINT_NEWLINE [89:13:newline] 
+ [90:0:insn::0] PRINT_ITEM [90:10:symbol] _TO [90:13:newline] 
+ [91:0:insn::0] PRINT_NEWLINE [91:13:symbol] _TO [91:16:newline] 
+ [92:0:symbol] INPLACE_LSF [92:11:symbol] HIT [92:14:newline] 
+ [93:0:insn::0] INPLACE_RSHIFT [93:14:newline] 
+ [94:0:insn::0] INPLACE_AND [94:11:newline] 
+ [95:0:insn::0] INPLACE_XOR [95:11:newline] 
+ [96:0:insn::0] INPLACE_OR [96:10:newline] 
+ [97:0:insn::0] BREAK_LOOP [97:10:newline] 
+ [98:0:insn::0] WITH_CLEANUP [98:12:symbol] S [98:13:newline] 
+ [99:0:insn::0] LOAD_LOCALS [99:11:newline] 
+ [100:0:insn::0] RETURN_VALUE [100:12:newline] 
+ [101:0:insn::0] IMPORT_STAR [101:11:newline] 
+ [102:0:insn::0] EXEC_STMT [102:9:newline] 
+ [103:0:insn::0] YIELD_VALUE [103:11:newline] 
+ [104:0:insn::0] POP_BLOCK [104:9:newline] 
+ [105:0:insn::0] END_FINALLY [105:11:newline] 
+ [106:0:insn::0] BUILD_CLASS [106:11:newline] 
+ [107:0:insn::1] STORE_NAME [107:10:newline] 
+ [108:0:insn::1] DELETE_NAME [108:11:newline] 
+ [109:0:insn::1] UNPACK_SEQUENCE [109:15:newline] 
+ [110:0:insn::1] FOR_ITER [110:8:newline] 
+ [111:0:insn::1] LIST_APPEND [111:11:newline] 
+ [112:0:insn::1] STORE_ATTR [112:10:newline] 
+ [113:0:insn::1] DELETE_ATTR [113:11:newline] 
+ [114:0:insn::1] STORE_GLOBAL [114:12:newline] 
+ [115:0:insn::1] DELETE_GLOBAL [115:13:newline] 
+ [116:0:insn::0] DUP_TOP [116:7:symbol] X [116:8:newline] 
+ [117:0:insn::1] LOAD_CONST [117:10:newline] 
+ [118:0:insn::1] LOAD_NAME [118:9:newline] 
+ [119:0:insn::1] BUILD_TUPLE [119:11:newline] 
+ [120:0:insn::1] BUILD_LIST [120:10:newline] 
+ [121:0:insn::1] BUILD_SET [121:9:newline] 
+ [122:0:insn::1] BUILD_MAP [122:9:newline] 
+ [123:0:insn::1] LOAD_ATTR [123:9:newline] 
+ [124:0:insn::1] COMPARE_OP [124:10:newline] 
+ [125:0:insn::1] IMPORT_NAME [125:11:newline] 
+ [126:0:insn::1] IMPORT_FROM [126:11:newline] 
+ [127:0:insn::1] JUMP_FORWARD [127:12:newline] 
+ [128:0:insn::1] JUMP_IF_FALSE_OR_POP [128:20:newline] 
+ [129:0:insn::1] JUMP_IF_TRUE_OR_POP [129:19:newline] 
+ [130:0:insn::1] JUMP_ABSOLUTE [130:13:newline] 
+ [131:0:insn::1] POP_JUMP_IF_FALSE [131:17:newline] 
+ [132:0:insn::1] POP_JUMP_IF_TRUE [132:16:newline] 
+ [133:0:insn::1] LOAD_GLOBAL [133:11:newline] 
+ [134:0:insn::1] CONTINUE_LOOP [134:13:newline] 
+ [135:0:insn::1] SETUP_LOOP [135:10:newline] 
+ [136:0:insn::1] SETUP_EXCEPT [136:12:newline] 
+ [137:0:insn::1] SETUP_FINALLY [137:13:newline] 
+ [138:0:insn::1] LOAD_FAST [138:9:newline] 
+ [139:0:insn::1] STORE_FAST [139:10:newline] 
+ [140:0:insn::1] DELETE_FAST [140:11:newline] 
+ [141:0:symbol] RAISE_VARAR [141:11:symbol] GS [141:13:newline] 
+ [142:0:insn::1] CALL_FUNCTION [142:13:newline] 
+ [143:0:insn::1] MAKE_FUNCTION [143:13:newline] 
+ [144:0:insn::1] BUILD_SLICE [144:11:newline] 
+ [145:0:insn::1] MAKE_CLOSURE [145:12:newline] 
+ [146:0:insn::1] LOAD_CLOSURE [146:12:newline] 
+ [147:0:insn::1] LOAD_DEREF [147:10:newline] 
+ [148:0:insn::1] STORE_DEREF [148:11:newline] 
+ [149:0:insn::1] CALL_FUNCTION [149:13:symbol] _VAR [149:17:newline] 
+ [150:0:insn::1] CALL_FUNCTION [150:13:symbol] _KW [150:16:newline] 
+ [151:0:insn::1] CALL_FUNCTION [151:13:symbol] _VAR_KW [151:20:newline] 
+ [152:0:insn::1] SETUP_WITH [152:10:newline] 
+ [153:0:insn::1] EXTENDED_ARG [153:12:newline] 
+ [154:0:insn::1] SET_ADD [154:7:newline] 
+ [155:0:insn::1] MAP_ADD [155:7:newline] 
+ [156:0:newline] 
+ [157:0:comment] # Reserved keywords [157:19:newline] 
+ [158:0:Pycst::Null] Null [158:4:newline] 
+ [159:0:Pycst::None] None [159:4:newline] 
+ [160:0:Pycst::True] True [160:4:newline] 
+ [161:0:Pycst::False] False [161:5:newline] 
+ [162:0:newline] 
+ [163:0:comment] # Some directives [163:17:newline] 
+ [164:0:dir::consts] .consts [164:7:newline] 
+ [165:0:dir::names] .names [165:6:newline] 
+ [166:0:dir::varnames] .varnames [166:9:newline] 
+ [167:0:dir::text] .text [167:5:newline] 
+ [168:0:dir::set] .set [168:4:newline] 
+ [169:0:dir::line] .line [169:5:newline] 
+ [170:0:dir::interned] .interned [170:9:newline] 
+ [171:0:dir::freevars] .freevars [171:9:newline] 
+ [172:0:dir::cellvars] .cellvars [172:9:newline] 
+ [173:0:dir::code_start] .code_start [173:11:newline] 
+ [174:0:dir::code_end] .code_end [174:9:newline] 
+ [175:0:newline] 
+ [176:0:comment] # the character ':' [176:19:newline] 
+ [177:0:colon] : [177:1:newline] 
+ [178:0:newline] 
+ [179:0:comment] # brackets lists [179:16:newline] 
+ [180:0:brack::left] [ [180:1:newline] 
+ [181:0:brack::right] ] [181:1:newline] 
+ [182:0:newline] 
+ [183:0:comment] # parenthesis tuples [183:20:newline] 
+ [184:0:paren::left] ( [184:1:newline] 
+ [185:0:paren::right] ) [185:1:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_05_int_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:integer::dec] 9 [1:1:newline] 
+ [2:0:integer::dec] 123 [2:3:newline] 
+ [3:0:newline] 
+ [4:0:integer::dec] -9 [4:2:newline] 
+ [5:0:integer::dec] -123 [5:4:newline] 
+ [6:0:newline] 
+ [7:0:integer::dec] +9 [7:2:newline] 
+ [8:0:integer::dec] +123 [8:4:newline] 
+ [9:0:newline] 
+ [10:0:integer::dec] 0 [10:1:newline] 
+ [11:0:newline] 
+ [12:0:integer::dec] 00 [12:2:newline] 
+ [13:0:newline] 
+ [14:0:integer::dec] 00123 [14:5:newline] 
+ [15:0:newline] 
+ [16:0:newline] 
+ [17:0:newline] 
+ [18:0:comment] # very long int [18:15:newline] 
+ [19:0:integer::dec] 12344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678 [19:119:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_06_hex_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:integer::hex] 0x12345678 [1:10:newline] 
+ [2:0:integer::hex] 0x9 [2:3:newline] 
+ [3:0:integer::hex] 0xABCDEF [3:8:newline] 
+ [4:0:integer::hex] 0xab [4:4:symbol] cdef [4:8:newline] 
+ [5:0:newline] 
+ [6:0:integer::hex] 0x000001 [6:8:newline] 
+ [7:0:integer::hex] 0x000000 [7:8:newline] 
+ [8:0:newline] 
+ [9:0:integer::hex] 0x1234567890ABCDEF [9:18:newline] 
+ [10:0:newline] 
+ [11:0:comment] # very long hex [11:15:newline] 
+ [12:0:integer::hex] 0x123456789ab [12:13:symbol] cdef123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF [12:122:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_07_label_declaration_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:symbol] unlabel [1:7:newline] 
+ [2:0:symbol] unlabel0123 [2:11:newline] 
+ [3:0:symbol] unlabel0123blabla [3:17:newline] 
+ [4:0:symbol] un_label [4:8:newline] 
+ [5:0:symbol] un_label_0_1_2_3 [5:16:newline] 
+ [6:0:newline] 
+ [7:0:symbol] _un_LABEL [7:9:newline] 
+ [8:0:symbol] __un_LABEL [8:10:newline] 
+ [9:0:newline] 
+ [10:0:symbol] un_label [10:8:blank]   [10:9:symbol] un_autre_label [10:23:newline] 
+ [11:0:newline] 
+ [12:0:symbol] un_label [12:8:paren::left] ( [12:9:symbol] un_autre_label [12:23:newline] 
+ [13:0:newline] 
+ [14:0:symbol] un_label [14:8:brack::left] [ [14:9:symbol] un_autre_label [14:23:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_08_label_usage_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:symbol] unlabel [1:7:colon] : [1:8:newline] 
+ [2:0:symbol] un_label [2:8:blank]     [2:11:colon] : [2:12:newline] 
+ [3:0:symbol] _un_LABEL_0_ [3:12:blank]   [3:13:colon] : [3:14:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 03_test_lexer/01_per_type_09_strings_OK_1.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( [1:0:string] "unechaine" [1:11:newline] 
+ [2:0:string] "UNECHAINEMAJUSCULE" [2:20:newline] 
+ [3:0:string] "UNECHAINEMAJUSCULEAVECDESENTIERS09862524" [3:42:newline] 
+ [4:0:string] "une chaine avec des espaces et tabulation	ici" [4:47:newline] 
+ [5:0:string] "une chaine avec des entiers  12345" [5:36:newline] 
+ [6:0:string] "une chaine avec des simple quote  '12345' eheh" [6:48:newline] 
+ [7:0:string] "une CHAINE avec des retours a la ligne\n\nfin de la chaine" [7:60:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################

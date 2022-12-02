@@ -1,0 +1,338 @@
+
+
+# TEST START ###################################################################
+# Test args              : '\a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'a', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\1'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '1', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in ']', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\a?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'a', zero or one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\#*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '#', zero or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\\'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '\', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '['
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ']'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '+'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '?'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '^a', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^ab]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '^ab', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '^ab', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '^ab', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[z-a]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[9-0]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[[]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[]]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\[-\]]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '[\]', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\-+]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '+-', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+\-]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '+-', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\t-\n]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '	
+', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\n-\r]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '
+', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\r-\t]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\\-}]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '\]^_`abcdefghijklmnopqrstuvwxyz{|}', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[-a]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[b-]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+--]'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+-\-]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '+,-', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in ' 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`bcdefghijklmnopqrstuvwxyz{|}~', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^^a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'a', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^^^a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in ' 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`bcdefghijklmnopqrstuvwxyz{|}~', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^^^a+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in ' 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`bcdefghijklmnopqrstuvwxyz{|}~', one or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################

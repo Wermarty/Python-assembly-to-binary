@@ -1,0 +1,31 @@
+'a+ccd+' 'accdefg'
+
+'a+ccd+' 'ccdefg'
+
+'a+c*d+' 'accdefg'
+
+'a+c*d+' 'adefg'
+
+'a+c*d+' 'ccdefg'
+
+'a?c+' 'accdefg'
+
+'a?c*' 'ccdefg'
+
+'^ab' 'cbefg'
+
+'^ab' 'abefg'
+
+'a^b*' 'acefgb'
+
+'a^b*' 'abefg'
+
+'\**fin' '*****fin_abc'
+
+'\[+\*fin' '[[fin_abc'
+
+'\[+\*fin' 'fin_abc'
+
+'\[+\*fin' '[[*fin_abc'
+
+'debut\?*fin' 'debut???fin_abc'

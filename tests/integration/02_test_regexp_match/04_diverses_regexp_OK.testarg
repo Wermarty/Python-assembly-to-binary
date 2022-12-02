@@ -1,0 +1,32 @@
+# diverses regexp
+
+''   ''
+''   'abc'
+'abc' ''
+
+'\.interned'   '.internedfin'
+'\.interned'   'internedfin'
+
+
+'"^["]*"'     '"abcdef"'
+
+'"[^"]*"'     '"abcdef"fin'
+
+'"[^"]*"'     '"chaineaccentuéeàèû"fin'
+
+'0+'   '000009'
+
+
+'&*'  '&&&&*+*'
+
+'\\+'  '\\\\\fin'
+
+'\\*'  'error'
+
+'\\?'  'fin'
+
+'\\?'  '?fin'
+
+'\\?'  '\fin'
+
+'\\?'  'error'

@@ -1,0 +1,38 @@
+# les char groups
+# commentaire non testé
+
+# basic chagroup
+'[abc]'
+
+
+# tests chagroup extraits du sujet pdf
+
+'[\-+]?[0-9]+'
+'[+\-]?[0-9]+'
+'[\-+]?[0-9]+[a-z]*'
+
+'0x[0-9a-fA-F]+'
+
+'^[a-f\-q-w+]+q^t*[x]?'
+
+
+
+# autres tests divers
+
+'[a-z]'
+
+'[0-9]'
+
+'[a-z0-9]'
+
+'[a-z$!0-9%]'
+
+'[a\-z]'
+
+'^[a-z]'
+
+'[a-z]*'
+
+'[a-z]?'
+
+'^[c-y]+'

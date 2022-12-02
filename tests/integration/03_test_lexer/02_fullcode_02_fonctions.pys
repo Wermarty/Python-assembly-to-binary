@@ -1,0 +1,65 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "function.py"
+.set name		 "<module>"
+.set stack_size		 2
+.set arg_count		 0
+
+.interned
+	"n"
+	"add_one"
+	"res"
+	"<module>"
+
+.consts
+.code_start 1
+.set version_pyvm	 62211
+.set flags		 0x00000043
+.set filename		 "function.py"
+.set name		 "add_one"
+.set stack_size		 2
+.set arg_count		 1
+
+.consts
+	None
+	1
+
+.varnames
+	"n"
+
+.text
+.line 2
+	LOAD_FAST             0	# "n"
+	LOAD_CONST            1	# 1
+	BINARY_ADD
+	RETURN_VALUE
+.code_end
+	21
+	None
+
+.names
+	"add_one"
+	"res"
+
+.text
+.line 1
+	LOAD_CONST            0	# <code:"add_one">
+	MAKE_FUNCTION         0
+	STORE_NAME            0	# "add_one"
+.line 3
+	LOAD_NAME             0	# "add_one"
+	LOAD_CONST            1	# 21
+	CALL_FUNCTION         1
+	STORE_NAME            1	# "res"
+.line 4
+	LOAD_NAME             1	# "res"
+	PRINT_ITEM
+	PRINT_NEWLINE
+	LOAD_CONST            2	# None
+	RETURN_VALUE
+
+# Disassembled Mon Nov  1 05:19:11 2021

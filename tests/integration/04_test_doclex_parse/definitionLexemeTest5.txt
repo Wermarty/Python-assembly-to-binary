@@ -1,0 +1,12 @@
+#Texts
+
+blank 	[\t ]+     $0x08
+newline			\n+    $0x03
+comment			\#^\n* $0x06    
+paren::left			(
+paren::right		)#coucoud
+brack::left			\[ $0xd5#coucou
+brack::right		\]
+colon						:        $0x5a      #salut
+semicolon				;
+string			"^[\n"]*"

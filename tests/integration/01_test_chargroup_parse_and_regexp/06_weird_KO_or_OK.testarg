@@ -1,0 +1,96 @@
+# diveres regexp plus ou moins weird
+# dont on a autorisé le fonctionnement ou non
+
+
+# échappements d'autres caractères sont acceptés comme le caractère échappé
+
+'\a'
+
+'\1'
+
+'\]'
+
+'\a?'
+
+'\#*'
+
+'\\'
+
+#caractère seul non autorisé
+
+'\'
+
+'['
+
+']'
+
+'^'
+
+'*'
+
+'+'
+
+'?'
+
+
+# dans crochet: negations non autorisé sont acceptés comme caractère '^'
+
+'[^a]'
+
+'[^ab]'
+
+'[a^b]'
+
+'[^a^b]'
+
+# dans crochet:  element mal ordonne non autorisé
+
+'[z-a]'
+
+'[9-0]'
+
+# dans crochet: caractère interdit
+
+'[[]'
+
+'[]]'
+
+'[\]'
+
+# dans crochet: test echappement
+
+'[\[-\]]'
+
+'[\-+]'
+
+'[+\-]'
+
+'[\t-\n]'
+
+'[\n-\r]'
+
+'[\r-\t]'
+
+'[\\-}]'
+
+# dans crochet: interdit de finir ou commencé par '-'
+
+'[-a]'
+
+'[b-]'
+
+# dans crochet: '-' doit être échappé
+
+'[+--]'
+
+'[+-\-]'
+
+# négations successives
+
+'^a'
+
+'^^a'
+
+'^^^a'
+
+'^^^a+'

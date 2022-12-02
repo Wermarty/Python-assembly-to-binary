@@ -1,0 +1,29 @@
+# commentaire => non testé. Doit etre en début de ligne !
+# les lignes vides sont aussi sautées.
+
+# Tests basiques du code fourni dans le sujet
+
+
+'aa'      'aabbbccccddddd'
+
+'aa'      'abbbccccddddd'
+
+'a*'      'aaaaabbbccccddddd'
+
+'a*'      'bbbccccddddd'
+
+'a*b*c*'  'aabbbccccddddd'
+
+'a*b*c*'  'bbbaaccccddddd'
+
+'a.b*'    'aabbbccccddddd'
+
+'a.b*'    'aaabbbccccddddd'
+
+'0.1*'    '0a1ccccddddd'
+
+'0.1*'    '0a1ccccddddd'
+
+'STORE_FAST' 'STORE___FAIL'
+
+'STORE_FAST' 'STORE_FAST OK'

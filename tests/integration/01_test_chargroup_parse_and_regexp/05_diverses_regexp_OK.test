@@ -1,0 +1,182 @@
+
+
+# TEST START ###################################################################
+# Test args              : ''
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ \t]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '	 ', one or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[ b\t]*#[a\n]*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '	 b', zero or more times. One in '#', one time. One in '
+a', zero or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\n+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '
+', one or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '('
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '(', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ')'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in ')', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '{'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '{', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '}'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '}', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\['
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '[', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STOP_CODE'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'S', one time. One in 'T', one time. One in 'O', one time. One in 'P', one time. One in '_', one time. One in 'C', one time. One in 'O', one time. One in 'D', one time. One in 'E', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\.interned'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '.', one time. One in 'i', one time. One in 'n', one time. One in 't', one time. One in 'e', one time. One in 'r', one time. One in 'n', one time. One in 'e', one time. One in 'd', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'Null'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'N', one time. One in 'u', one time. One in 'l', one time. One in 'l', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z_A-Z]+[a-z_A-Z0-9]*[ \t]*:'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in 'ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz', one or more times. One in '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ_abcdefghijklmnopqrstuvwxyz', zero or more times. One in '	 ', zero or more times. One in ':', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '0x[0-9a-fA-F]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '0', one time. One in 'x', one time. One in '0123456789ABCDEFabcdef', one or more times. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '&'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '&', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '@'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '@', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '|'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '|', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '+'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Error parsing regexp.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '-'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '-', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '~'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+( One in '~', one time. )
+# END Test stdout and stderr
+# TEST END   ###################################################################

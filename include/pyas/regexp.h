@@ -14,7 +14,6 @@
 extern "C" {
 #endif
 
-#include <pyas/chargroup.h>
 #include <pyas/list.h>
 
 

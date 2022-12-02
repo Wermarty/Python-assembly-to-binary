@@ -1,0 +1,72 @@
+
+
+# TEST START ###################################################################
+# Test args              : 'aa'      'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is aa, next: 'bbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*'      'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is a*, next: 'bbbccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*b*c*'  'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is a*b*c*, next: 'ddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a.b*'    'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is a.b*, next: 'ccccddddd'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'ba.b*'   'aabbbccccddddd'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'aabbbccccddddd' is *NOT* ba.b*.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'ba.b*'   'bac OK'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'bac OK' is ba.b*, next: ' OK'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STORE_FAST'   'STOerror'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'STOerror' is *NOT* STORE_FAST.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STORE_FAST'   'STORE_FAST___OK'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+The start of 'STORE_FAST___OK' is STORE_FAST, next: '___OK'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

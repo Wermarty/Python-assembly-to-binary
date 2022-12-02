@@ -1,0 +1,1114 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_end_of_line_debut0.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+[ERROR 1:0] Unexpected input.
+( [1:0:dir::set] .set [1:4:blank]   [1:5:name] version_pyvm [1:17:blank] 	  [1:19:integer::dec] 62211 [1:24:newline] 
+ [2:0:dir::set] .set [2:4:blank]   [2:5:name] flags [2:10:blank] 		  [2:13:integer::hex] 0x00000040 [2:23:newline] 
+ [3:0:dir::set] .set [3:4:blank]   [3:5:name] filename [3:13:blank] 		  [3:16:string] "test.py" [3:25:newline] 
+ [4:0:dir::set] .set [4:4:blank]   [4:5:name] name [4:9:blank] 		  [4:12:string] "<module>" [4:22:newline] 
+ [5:0:dir::set] .set [5:4:blank]   [5:5:name] stack_size [5:15:blank] 		  [5:18:integer::dec] 2 [5:19:newline] 
+ [6:0:dir::set] .set [6:4:blank]   [6:5:name] arg_count [6:14:blank] 		  [6:17:integer::dec] 0 [6:18:newline] 
+ [7:0:newline] 
+ [8:0:dir::interned] .interned [8:9:newline] 
+ [9:0:blank] 	 [9:1:string] "nothing" [9:10:newline] 
+ [10:0:blank] 	 [10:1:string] "a" [10:4:newline] 
+ [11:0:blank] 	 [11:1:string] "<module>" [11:11:newline] 
+ [12:0:newline] 
+ [13:0:dir::consts] .consts [13:7:newline] 
+ [14:0:blank] 	 [14:1:integer::dec] 13 [14:3:newline] 
+ [15:0:blank] 	 [15:1:integer::dec] 12 [15:3:newline] 
+ [16:0:blank] 	 [16:1:string] "nothing" [16:10:newline] 
+ [17:0:blank] 	 [17:1:Pycst::None] None [17:5:newline] 
+ [18:0:newline] 
+ [19:0:dir::names] .names [19:6:newline] 
+ [20:0:blank] 	 [20:1:string] "a" [20:4:newline] 
+ [21:0:newline] 
+ [22:0:dir::text] .text [22:5:newline] 
+ [23:0:dir::line] .line [23:5:blank]   [23:6:integer::dec] 3 [23:7:newline] 
+ [24:0:blank] 	 [24:1:insn::1] LOAD_CONST [24:11:blank]              [24:23:integer::dec] 0 [24:24:blank] 	 [24:25:comment] # 13 [24:29:newline] 
+ [25:0:blank] 	 [25:1:insn::1] STORE_NAME [25:11:blank]              [25:23:integer::dec] 0 [25:24:blank] 	 [25:25:comment] # "a" [25:30:newline] 
+ [26:0:dir::line] .line [26:5:blank]   [26:6:integer::dec] 5 [26:7:newline] 
+ [27:0:blank] 	 [27:1:insn::1] LOAD_NAME [27:10:blank]               [27:23:integer::dec] 0 [27:24:blank] 	 [27:25:comment] # "a" [27:30:newline] 
+ [28:0:blank] 	 [28:1:insn::1] LOAD_CONST [28:11:blank]              [28:23:integer::dec] 1 [28:24:blank] 	 [28:25:comment] # 12 [28:29:newline] 
+ [29:0:blank] 	 [29:1:insn::1] COMPARE_OP [29:11:blank]              [29:23:integer::dec] 2 [29:24:blank] 	 [29:25:comment] # "==" [29:31:newline] 
+ [30:0:blank] 	 [30:1:insn::1] POP_JUMP_IF_FALSE [30:18:blank]       [30:23:symbol] label_0 [30:30:newline] 
+ [31:0:dir::line] .line [31:5:blank]   [31:6:integer::dec] 6 [31:7:newline] 
+ [32:0:blank] 	 [32:1:insn::1] LOAD_NAME [32:10:blank]               [32:23:integer::dec] 0 [32:24:blank] 	 [32:25:comment] # "a" [32:30:newline] 
+ [33:0:blank] 	 [33:1:insn::0] PRINT_ITEM [33:11:newline] 
+ [34:0:blank] 	 [34:1:insn::0] PRINT_NEWLINE [34:14:newline] 
+ [35:0:blank] 	 [35:1:insn::1] JUMP_FORWARD [35:13:blank]            [35:23:symbol] label_1 [35:30:newline] 
+ [36:0:dir::line] .line [36:5:blank]   [36:6:integer::dec] 8 [36:7:newline] 
+ [37:0:symbol] label_0 [37:7:colon] : [37:8:newline] 
+ [38:0:blank] 	 [38:1:insn::1] LOAD_CONST [38:11:blank]              [38:23:integer::dec] 2 [38:24:blank] 	 [38:25:comment] # "nothing" [38:36:newline] 
+ [39:0:blank] 	 [39:1:insn::0] PRINT_ITEM [39:11:newline] 
+ [40:0:blank] 	 [40:1:insn::0] PRINT_NEWLINE [40:14:newline] 
+ [41:0:symbol] label_1 [41:7:colon] : [41:8:newline] 
+ [42:0:blank] 	 [42:1:insn::1] LOAD_CONST [42:11:blank]              [42:23:integer::dec] 3 [42:24:blank] 	 [42:25:comment] # None [42:31:newline] 
+ [43:0:blank] 	 [43:1:insn::0] RETURN_VALUE [43:13:newline] 
+ [44:0:newline] 
+ [45:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [45:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set1.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+[ERROR 3:0] Unexpected input.
+( [3:0:name] version_pyvm [3:12:blank] 	  [3:14:integer::dec] 62211 [3:19:newline] 
+ [4:0:dir::set] .set [4:4:blank]   [4:5:name] flags [4:10:blank] 		  [4:13:integer::hex] 0x00000040 [4:23:newline] 
+ [5:0:dir::set] .set [5:4:blank]   [5:5:name] filename [5:13:blank] 		  [5:16:string] "test.py" [5:25:newline] 
+ [6:0:dir::set] .set [6:4:blank]   [6:5:name] name [6:9:blank] 		  [6:12:string] "<module>" [6:22:newline] 
+ [7:0:dir::set] .set [7:4:blank]   [7:5:name] stack_size [7:15:blank] 		  [7:18:integer::dec] 2 [7:19:newline] 
+ [8:0:dir::set] .set [8:4:blank]   [8:5:name] arg_count [8:14:blank] 		  [8:17:integer::dec] 0 [8:18:newline] 
+ [9:0:newline] 
+ [10:0:dir::interned] .interned [10:9:newline] 
+ [11:0:blank] 	 [11:1:string] "nothing" [11:10:newline] 
+ [12:0:blank] 	 [12:1:string] "a" [12:4:newline] 
+ [13:0:blank] 	 [13:1:string] "<module>" [13:11:newline] 
+ [14:0:newline] 
+ [15:0:dir::consts] .consts [15:7:newline] 
+ [16:0:blank] 	 [16:1:integer::dec] 13 [16:3:newline] 
+ [17:0:blank] 	 [17:1:integer::dec] 12 [17:3:newline] 
+ [18:0:blank] 	 [18:1:string] "nothing" [18:10:newline] 
+ [19:0:blank] 	 [19:1:Pycst::None] None [19:5:newline] 
+ [20:0:newline] 
+ [21:0:dir::names] .names [21:6:newline] 
+ [22:0:blank] 	 [22:1:string] "a" [22:4:newline] 
+ [23:0:newline] 
+ [24:0:dir::text] .text [24:5:newline] 
+ [25:0:dir::line] .line [25:5:blank]   [25:6:integer::dec] 3 [25:7:newline] 
+ [26:0:blank] 	 [26:1:insn::1] LOAD_CONST [26:11:blank]              [26:23:integer::dec] 0 [26:24:blank] 	 [26:25:comment] # 13 [26:29:newline] 
+ [27:0:blank] 	 [27:1:insn::1] STORE_NAME [27:11:blank]              [27:23:integer::dec] 0 [27:24:blank] 	 [27:25:comment] # "a" [27:30:newline] 
+ [28:0:dir::line] .line [28:5:blank]   [28:6:integer::dec] 5 [28:7:newline] 
+ [29:0:blank] 	 [29:1:insn::1] LOAD_NAME [29:10:blank]               [29:23:integer::dec] 0 [29:24:blank] 	 [29:25:comment] # "a" [29:30:newline] 
+ [30:0:blank] 	 [30:1:insn::1] LOAD_CONST [30:11:blank]              [30:23:integer::dec] 1 [30:24:blank] 	 [30:25:comment] # 12 [30:29:newline] 
+ [31:0:blank] 	 [31:1:insn::1] COMPARE_OP [31:11:blank]              [31:23:integer::dec] 2 [31:24:blank] 	 [31:25:comment] # "==" [31:31:newline] 
+ [32:0:blank] 	 [32:1:insn::1] POP_JUMP_IF_FALSE [32:18:blank]       [32:23:symbol] label_0 [32:30:newline] 
+ [33:0:dir::line] .line [33:5:blank]   [33:6:integer::dec] 6 [33:7:newline] 
+ [34:0:blank] 	 [34:1:insn::1] LOAD_NAME [34:10:blank]               [34:23:integer::dec] 0 [34:24:blank] 	 [34:25:comment] # "a" [34:30:newline] 
+ [35:0:blank] 	 [35:1:insn::0] PRINT_ITEM [35:11:newline] 
+ [36:0:blank] 	 [36:1:insn::0] PRINT_NEWLINE [36:14:newline] 
+ [37:0:blank] 	 [37:1:insn::1] JUMP_FORWARD [37:13:blank]            [37:23:symbol] label_1 [37:30:newline] 
+ [38:0:dir::line] .line [38:5:blank]   [38:6:integer::dec] 8 [38:7:newline] 
+ [39:0:symbol] label_0 [39:7:colon] : [39:8:newline] 
+ [40:0:blank] 	 [40:1:insn::1] LOAD_CONST [40:11:blank]              [40:23:integer::dec] 2 [40:24:blank] 	 [40:25:comment] # "nothing" [40:36:newline] 
+ [41:0:blank] 	 [41:1:insn::0] PRINT_ITEM [41:11:newline] 
+ [42:0:blank] 	 [42:1:insn::0] PRINT_NEWLINE [42:14:newline] 
+ [43:0:symbol] label_1 [43:7:colon] : [43:8:newline] 
+ [44:0:blank] 	 [44:1:insn::1] LOAD_CONST [44:11:blank]              [44:23:integer::dec] 3 [44:24:blank] 	 [44:25:comment] # None [44:31:newline] 
+ [45:0:blank] 	 [45:1:insn::0] RETURN_VALUE [45:13:newline] 
+ [46:0:newline] 
+ [47:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [47:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set2.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+[ERROR 3:4] No blank or Unexpected comment.
+( [3:4:name] version_pyvm [3:16:blank] 	  [3:18:integer::dec] 62211 [3:23:newline] 
+ [4:0:dir::set] .set [4:4:blank]   [4:5:name] flags [4:10:blank] 		  [4:13:integer::hex] 0x00000040 [4:23:newline] 
+ [5:0:dir::set] .set [5:4:blank]   [5:5:name] filename [5:13:blank] 		  [5:16:string] "test.py" [5:25:newline] 
+ [6:0:dir::set] .set [6:4:blank]   [6:5:name] name [6:9:blank] 		  [6:12:string] "<module>" [6:22:newline] 
+ [7:0:dir::set] .set [7:4:blank]   [7:5:name] stack_size [7:15:blank] 		  [7:18:integer::dec] 2 [7:19:newline] 
+ [8:0:dir::set] .set [8:4:blank]   [8:5:name] arg_count [8:14:blank] 		  [8:17:integer::dec] 0 [8:18:newline] 
+ [9:0:newline] 
+ [10:0:dir::interned] .interned [10:9:newline] 
+ [11:0:blank] 	 [11:1:string] "nothing" [11:10:newline] 
+ [12:0:blank] 	 [12:1:string] "a" [12:4:newline] 
+ [13:0:blank] 	 [13:1:string] "<module>" [13:11:newline] 
+ [14:0:newline] 
+ [15:0:dir::consts] .consts [15:7:newline] 
+ [16:0:blank] 	 [16:1:integer::dec] 13 [16:3:newline] 
+ [17:0:blank] 	 [17:1:integer::dec] 12 [17:3:newline] 
+ [18:0:blank] 	 [18:1:string] "nothing" [18:10:newline] 
+ [19:0:blank] 	 [19:1:Pycst::None] None [19:5:newline] 
+ [20:0:newline] 
+ [21:0:dir::names] .names [21:6:newline] 
+ [22:0:blank] 	 [22:1:string] "a" [22:4:newline] 
+ [23:0:newline] 
+ [24:0:dir::text] .text [24:5:newline] 
+ [25:0:dir::line] .line [25:5:blank]   [25:6:integer::dec] 3 [25:7:newline] 
+ [26:0:blank] 	 [26:1:insn::1] LOAD_CONST [26:11:blank]              [26:23:integer::dec] 0 [26:24:blank] 	 [26:25:comment] # 13 [26:29:newline] 
+ [27:0:blank] 	 [27:1:insn::1] STORE_NAME [27:11:blank]              [27:23:integer::dec] 0 [27:24:blank] 	 [27:25:comment] # "a" [27:30:newline] 
+ [28:0:dir::line] .line [28:5:blank]   [28:6:integer::dec] 5 [28:7:newline] 
+ [29:0:blank] 	 [29:1:insn::1] LOAD_NAME [29:10:blank]               [29:23:integer::dec] 0 [29:24:blank] 	 [29:25:comment] # "a" [29:30:newline] 
+ [30:0:blank] 	 [30:1:insn::1] LOAD_CONST [30:11:blank]              [30:23:integer::dec] 1 [30:24:blank] 	 [30:25:comment] # 12 [30:29:newline] 
+ [31:0:blank] 	 [31:1:insn::1] COMPARE_OP [31:11:blank]              [31:23:integer::dec] 2 [31:24:blank] 	 [31:25:comment] # "==" [31:31:newline] 
+ [32:0:blank] 	 [32:1:insn::1] POP_JUMP_IF_FALSE [32:18:blank]       [32:23:symbol] label_0 [32:30:newline] 
+ [33:0:dir::line] .line [33:5:blank]   [33:6:integer::dec] 6 [33:7:newline] 
+ [34:0:blank] 	 [34:1:insn::1] LOAD_NAME [34:10:blank]               [34:23:integer::dec] 0 [34:24:blank] 	 [34:25:comment] # "a" [34:30:newline] 
+ [35:0:blank] 	 [35:1:insn::0] PRINT_ITEM [35:11:newline] 
+ [36:0:blank] 	 [36:1:insn::0] PRINT_NEWLINE [36:14:newline] 
+ [37:0:blank] 	 [37:1:insn::1] JUMP_FORWARD [37:13:blank]            [37:23:symbol] label_1 [37:30:newline] 
+ [38:0:dir::line] .line [38:5:blank]   [38:6:integer::dec] 8 [38:7:newline] 
+ [39:0:symbol] label_0 [39:7:colon] : [39:8:newline] 
+ [40:0:blank] 	 [40:1:insn::1] LOAD_CONST [40:11:blank]              [40:23:integer::dec] 2 [40:24:blank] 	 [40:25:comment] # "nothing" [40:36:newline] 
+ [41:0:blank] 	 [41:1:insn::0] PRINT_ITEM [41:11:newline] 
+ [42:0:blank] 	 [42:1:insn::0] PRINT_NEWLINE [42:14:newline] 
+ [43:0:symbol] label_1 [43:7:colon] : [43:8:newline] 
+ [44:0:blank] 	 [44:1:insn::1] LOAD_CONST [44:11:blank]              [44:23:integer::dec] 3 [44:24:blank] 	 [44:25:comment] # None [44:31:newline] 
+ [45:0:blank] 	 [45:1:insn::0] RETURN_VALUE [45:13:newline] 
+ [46:0:newline] 
+ [47:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [47:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set3.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+[ERROR 6:9] No blank or Unexpected comment.
+( [6:9:string] "<module>" [6:19:newline] 
+ [7:0:dir::set] .set [7:4:blank]   [7:5:name] stack_size [7:15:blank] 		  [7:18:integer::dec] 2 [7:19:newline] 
+ [8:0:dir::set] .set [8:4:blank]   [8:5:name] arg_count [8:14:blank] 		  [8:17:integer::dec] 0 [8:18:newline] 
+ [9:0:newline] 
+ [10:0:dir::interned] .interned [10:9:newline] 
+ [11:0:blank] 	 [11:1:string] "nothing" [11:10:newline] 
+ [12:0:blank] 	 [12:1:string] "a" [12:4:newline] 
+ [13:0:blank] 	 [13:1:string] "<module>" [13:11:newline] 
+ [14:0:newline] 
+ [15:0:dir::consts] .consts [15:7:newline] 
+ [16:0:blank] 	 [16:1:integer::dec] 13 [16:3:newline] 
+ [17:0:blank] 	 [17:1:integer::dec] 12 [17:3:newline] 
+ [18:0:blank] 	 [18:1:string] "nothing" [18:10:newline] 
+ [19:0:blank] 	 [19:1:Pycst::None] None [19:5:newline] 
+ [20:0:newline] 
+ [21:0:dir::names] .names [21:6:newline] 
+ [22:0:blank] 	 [22:1:string] "a" [22:4:newline] 
+ [23:0:newline] 
+ [24:0:dir::text] .text [24:5:newline] 
+ [25:0:dir::line] .line [25:5:blank]   [25:6:integer::dec] 3 [25:7:newline] 
+ [26:0:blank] 	 [26:1:insn::1] LOAD_CONST [26:11:blank]              [26:23:integer::dec] 0 [26:24:blank] 	 [26:25:comment] # 13 [26:29:newline] 
+ [27:0:blank] 	 [27:1:insn::1] STORE_NAME [27:11:blank]              [27:23:integer::dec] 0 [27:24:blank] 	 [27:25:comment] # "a" [27:30:newline] 
+ [28:0:dir::line] .line [28:5:blank]   [28:6:integer::dec] 5 [28:7:newline] 
+ [29:0:blank] 	 [29:1:insn::1] LOAD_NAME [29:10:blank]               [29:23:integer::dec] 0 [29:24:blank] 	 [29:25:comment] # "a" [29:30:newline] 
+ [30:0:blank] 	 [30:1:insn::1] LOAD_CONST [30:11:blank]              [30:23:integer::dec] 1 [30:24:blank] 	 [30:25:comment] # 12 [30:29:newline] 
+ [31:0:blank] 	 [31:1:insn::1] COMPARE_OP [31:11:blank]              [31:23:integer::dec] 2 [31:24:blank] 	 [31:25:comment] # "==" [31:31:newline] 
+ [32:0:blank] 	 [32:1:insn::1] POP_JUMP_IF_FALSE [32:18:blank]       [32:23:symbol] label_0 [32:30:newline] 
+ [33:0:dir::line] .line [33:5:blank]   [33:6:integer::dec] 6 [33:7:newline] 
+ [34:0:blank] 	 [34:1:insn::1] LOAD_NAME [34:10:blank]               [34:23:integer::dec] 0 [34:24:blank] 	 [34:25:comment] # "a" [34:30:newline] 
+ [35:0:blank] 	 [35:1:insn::0] PRINT_ITEM [35:11:newline] 
+ [36:0:blank] 	 [36:1:insn::0] PRINT_NEWLINE [36:14:newline] 
+ [37:0:blank] 	 [37:1:insn::1] JUMP_FORWARD [37:13:blank]            [37:23:symbol] label_1 [37:30:newline] 
+ [38:0:dir::line] .line [38:5:blank]   [38:6:integer::dec] 8 [38:7:newline] 
+ [39:0:symbol] label_0 [39:7:colon] : [39:8:newline] 
+ [40:0:blank] 	 [40:1:insn::1] LOAD_CONST [40:11:blank]              [40:23:integer::dec] 2 [40:24:blank] 	 [40:25:comment] # "nothing" [40:36:newline] 
+ [41:0:blank] 	 [41:1:insn::0] PRINT_ITEM [41:11:newline] 
+ [42:0:blank] 	 [42:1:insn::0] PRINT_NEWLINE [42:14:newline] 
+ [43:0:symbol] label_1 [43:7:colon] : [43:8:newline] 
+ [44:0:blank] 	 [44:1:insn::1] LOAD_CONST [44:11:blank]              [44:23:integer::dec] 3 [44:24:blank] 	 [44:25:comment] # None [44:31:newline] 
+ [45:0:blank] 	 [45:1:insn::0] RETURN_VALUE [45:13:newline] 
+ [46:0:newline] 
+ [47:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [47:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set4.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+[ERROR 6:5] Not the right set-directives.
+( [6:5:name] stack_size [6:15:blank] 		  [6:18:integer::dec] 2 [6:19:newline] 
+ [7:0:dir::set] .set [7:4:blank]   [7:5:name] name [7:9:blank] 		  [7:12:string] "<module>" [7:22:newline] 
+ [8:0:dir::set] .set [8:4:blank]   [8:5:name] arg_count [8:14:blank] 		  [8:17:integer::dec] 0 [8:18:newline] 
+ [9:0:newline] 
+ [10:0:dir::interned] .interned [10:9:newline] 
+ [11:0:blank] 	 [11:1:string] "nothing" [11:10:newline] 
+ [12:0:blank] 	 [12:1:string] "a" [12:4:newline] 
+ [13:0:blank] 	 [13:1:string] "<module>" [13:11:newline] 
+ [14:0:newline] 
+ [15:0:dir::consts] .consts [15:7:newline] 
+ [16:0:blank] 	 [16:1:integer::dec] 13 [16:3:newline] 
+ [17:0:blank] 	 [17:1:integer::dec] 12 [17:3:newline] 
+ [18:0:blank] 	 [18:1:string] "nothing" [18:10:newline] 
+ [19:0:blank] 	 [19:1:Pycst::None] None [19:5:newline] 
+ [20:0:newline] 
+ [21:0:dir::names] .names [21:6:newline] 
+ [22:0:blank] 	 [22:1:string] "a" [22:4:newline] 
+ [23:0:newline] 
+ [24:0:dir::text] .text [24:5:newline] 
+ [25:0:dir::line] .line [25:5:blank]   [25:6:integer::dec] 3 [25:7:newline] 
+ [26:0:blank] 	 [26:1:insn::1] LOAD_CONST [26:11:blank]              [26:23:integer::dec] 0 [26:24:blank] 	 [26:25:comment] # 13 [26:29:newline] 
+ [27:0:blank] 	 [27:1:insn::1] STORE_NAME [27:11:blank]              [27:23:integer::dec] 0 [27:24:blank] 	 [27:25:comment] # "a" [27:30:newline] 
+ [28:0:dir::line] .line [28:5:blank]   [28:6:integer::dec] 5 [28:7:newline] 
+ [29:0:blank] 	 [29:1:insn::1] LOAD_NAME [29:10:blank]               [29:23:integer::dec] 0 [29:24:blank] 	 [29:25:comment] # "a" [29:30:newline] 
+ [30:0:blank] 	 [30:1:insn::1] LOAD_CONST [30:11:blank]              [30:23:integer::dec] 1 [30:24:blank] 	 [30:25:comment] # 12 [30:29:newline] 
+ [31:0:blank] 	 [31:1:insn::1] COMPARE_OP [31:11:blank]              [31:23:integer::dec] 2 [31:24:blank] 	 [31:25:comment] # "==" [31:31:newline] 
+ [32:0:blank] 	 [32:1:insn::1] POP_JUMP_IF_FALSE [32:18:blank]       [32:23:symbol] label_0 [32:30:newline] 
+ [33:0:dir::line] .line [33:5:blank]   [33:6:integer::dec] 6 [33:7:newline] 
+ [34:0:blank] 	 [34:1:insn::1] LOAD_NAME [34:10:blank]               [34:23:integer::dec] 0 [34:24:blank] 	 [34:25:comment] # "a" [34:30:newline] 
+ [35:0:blank] 	 [35:1:insn::0] PRINT_ITEM [35:11:newline] 
+ [36:0:blank] 	 [36:1:insn::0] PRINT_NEWLINE [36:14:newline] 
+ [37:0:blank] 	 [37:1:insn::1] JUMP_FORWARD [37:13:blank]            [37:23:symbol] label_1 [37:30:newline] 
+ [38:0:dir::line] .line [38:5:blank]   [38:6:integer::dec] 8 [38:7:newline] 
+ [39:0:symbol] label_0 [39:7:colon] : [39:8:newline] 
+ [40:0:blank] 	 [40:1:insn::1] LOAD_CONST [40:11:blank]              [40:23:integer::dec] 2 [40:24:blank] 	 [40:25:comment] # "nothing" [40:36:newline] 
+ [41:0:blank] 	 [41:1:insn::0] PRINT_ITEM [41:11:newline] 
+ [42:0:blank] 	 [42:1:insn::0] PRINT_NEWLINE [42:14:newline] 
+ [43:0:symbol] label_1 [43:7:colon] : [43:8:newline] 
+ [44:0:blank] 	 [44:1:insn::1] LOAD_CONST [44:11:blank]              [44:23:integer::dec] 3 [44:24:blank] 	 [44:25:comment] # None [44:31:newline] 
+ [45:0:blank] 	 [45:1:insn::0] RETURN_VALUE [45:13:newline] 
+ [46:0:newline] 
+ [47:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [47:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set5.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+[ERROR 7:5] Not the right set-directives.
+( [7:5:name] arg_count [7:14:blank] 		  [7:17:integer::dec] 0 [7:18:newline] 
+ [8:0:newline] 
+ [9:0:dir::interned] .interned [9:9:newline] 
+ [10:0:blank] 	 [10:1:string] "nothing" [10:10:newline] 
+ [11:0:blank] 	 [11:1:string] "a" [11:4:newline] 
+ [12:0:blank] 	 [12:1:string] "<module>" [12:11:newline] 
+ [13:0:newline] 
+ [14:0:dir::consts] .consts [14:7:newline] 
+ [15:0:blank] 	 [15:1:integer::dec] 13 [15:3:newline] 
+ [16:0:blank] 	 [16:1:integer::dec] 12 [16:3:newline] 
+ [17:0:blank] 	 [17:1:string] "nothing" [17:10:newline] 
+ [18:0:blank] 	 [18:1:Pycst::None] None [18:5:newline] 
+ [19:0:newline] 
+ [20:0:dir::names] .names [20:6:newline] 
+ [21:0:blank] 	 [21:1:string] "a" [21:4:newline] 
+ [22:0:newline] 
+ [23:0:dir::text] .text [23:5:newline] 
+ [24:0:dir::line] .line [24:5:blank]   [24:6:integer::dec] 3 [24:7:newline] 
+ [25:0:blank] 	 [25:1:insn::1] LOAD_CONST [25:11:blank]              [25:23:integer::dec] 0 [25:24:blank] 	 [25:25:comment] # 13 [25:29:newline] 
+ [26:0:blank] 	 [26:1:insn::1] STORE_NAME [26:11:blank]              [26:23:integer::dec] 0 [26:24:blank] 	 [26:25:comment] # "a" [26:30:newline] 
+ [27:0:dir::line] .line [27:5:blank]   [27:6:integer::dec] 5 [27:7:newline] 
+ [28:0:blank] 	 [28:1:insn::1] LOAD_NAME [28:10:blank]               [28:23:integer::dec] 0 [28:24:blank] 	 [28:25:comment] # "a" [28:30:newline] 
+ [29:0:blank] 	 [29:1:insn::1] LOAD_CONST [29:11:blank]              [29:23:integer::dec] 1 [29:24:blank] 	 [29:25:comment] # 12 [29:29:newline] 
+ [30:0:blank] 	 [30:1:insn::1] COMPARE_OP [30:11:blank]              [30:23:integer::dec] 2 [30:24:blank] 	 [30:25:comment] # "==" [30:31:newline] 
+ [31:0:blank] 	 [31:1:insn::1] POP_JUMP_IF_FALSE [31:18:blank]       [31:23:symbol] label_0 [31:30:newline] 
+ [32:0:dir::line] .line [32:5:blank]   [32:6:integer::dec] 6 [32:7:newline] 
+ [33:0:blank] 	 [33:1:insn::1] LOAD_NAME [33:10:blank]               [33:23:integer::dec] 0 [33:24:blank] 	 [33:25:comment] # "a" [33:30:newline] 
+ [34:0:blank] 	 [34:1:insn::0] PRINT_ITEM [34:11:newline] 
+ [35:0:blank] 	 [35:1:insn::0] PRINT_NEWLINE [35:14:newline] 
+ [36:0:blank] 	 [36:1:insn::1] JUMP_FORWARD [36:13:blank]            [36:23:symbol] label_1 [36:30:newline] 
+ [37:0:dir::line] .line [37:5:blank]   [37:6:integer::dec] 8 [37:7:newline] 
+ [38:0:symbol] label_0 [38:7:colon] : [38:8:newline] 
+ [39:0:blank] 	 [39:1:insn::1] LOAD_CONST [39:11:blank]              [39:23:integer::dec] 2 [39:24:blank] 	 [39:25:comment] # "nothing" [39:36:newline] 
+ [40:0:blank] 	 [40:1:insn::0] PRINT_ITEM [40:11:newline] 
+ [41:0:blank] 	 [41:1:insn::0] PRINT_NEWLINE [41:14:newline] 
+ [42:0:symbol] label_1 [42:7:colon] : [42:8:newline] 
+ [43:0:blank] 	 [43:1:insn::1] LOAD_CONST [43:11:blank]              [43:23:integer::dec] 3 [43:24:blank] 	 [43:25:comment] # None [43:31:newline] 
+ [44:0:blank] 	 [44:1:insn::0] RETURN_VALUE [44:13:newline] 
+ [45:0:newline] 
+ [46:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [46:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set6.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing set-posonly_arg_count
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set7.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set8.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set9.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/01_test_prologue_erreur_set10.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing blank
+Parsing set-posonly_arg_count
+Parsing blank
+Parsing end of line
+Parsing interned-strings
+[ERROR 10:0] Unexpected input.
+( [10:0:dir::set] .set [10:4:blank]   [10:5:name] kwonly_arg_count [10:21:blank] 	  [10:23:integer::dec] 2 [10:24:newline] 
+ [11:0:newline] 
+ [12:0:dir::interned] .interned [12:9:newline] 
+ [13:0:blank] 	 [13:1:string] "nothing" [13:10:newline] 
+ [14:0:blank] 	 [14:1:string] "a" [14:4:newline] 
+ [15:0:blank] 	 [15:1:string] "<module>" [15:11:newline] 
+ [16:0:newline] 
+ [17:0:dir::consts] .consts [17:7:newline] 
+ [18:0:blank] 	 [18:1:integer::dec] 13 [18:3:newline] 
+ [19:0:blank] 	 [19:1:integer::dec] 12 [19:3:newline] 
+ [20:0:blank] 	 [20:1:string] "nothing" [20:10:newline] 
+ [21:0:blank] 	 [21:1:Pycst::None] None [21:5:newline] 
+ [22:0:newline] 
+ [23:0:dir::names] .names [23:6:newline] 
+ [24:0:blank] 	 [24:1:string] "a" [24:4:newline] 
+ [25:0:newline] 
+ [26:0:dir::text] .text [26:5:newline] 
+ [27:0:dir::line] .line [27:5:blank]   [27:6:integer::dec] 3 [27:7:newline] 
+ [28:0:blank] 	 [28:1:insn::1] LOAD_CONST [28:11:blank]              [28:23:integer::dec] 0 [28:24:blank] 	 [28:25:comment] # 13 [28:29:newline] 
+ [29:0:blank] 	 [29:1:insn::1] STORE_NAME [29:11:blank]              [29:23:integer::dec] 0 [29:24:blank] 	 [29:25:comment] # "a" [29:30:newline] 
+ [30:0:dir::line] .line [30:5:blank]   [30:6:integer::dec] 5 [30:7:newline] 
+ [31:0:blank] 	 [31:1:insn::1] LOAD_NAME [31:10:blank]               [31:23:integer::dec] 0 [31:24:blank] 	 [31:25:comment] # "a" [31:30:newline] 
+ [32:0:blank] 	 [32:1:insn::1] LOAD_CONST [32:11:blank]              [32:23:integer::dec] 1 [32:24:blank] 	 [32:25:comment] # 12 [32:29:newline] 
+ [33:0:blank] 	 [33:1:insn::1] COMPARE_OP [33:11:blank]              [33:23:integer::dec] 2 [33:24:blank] 	 [33:25:comment] # "==" [33:31:newline] 
+ [34:0:blank] 	 [34:1:insn::1] POP_JUMP_IF_FALSE [34:18:blank]       [34:23:symbol] label_0 [34:30:newline] 
+ [35:0:dir::line] .line [35:5:blank]   [35:6:integer::dec] 6 [35:7:newline] 
+ [36:0:blank] 	 [36:1:insn::1] LOAD_NAME [36:10:blank]               [36:23:integer::dec] 0 [36:24:blank] 	 [36:25:comment] # "a" [36:30:newline] 
+ [37:0:blank] 	 [37:1:insn::0] PRINT_ITEM [37:11:newline] 
+ [38:0:blank] 	 [38:1:insn::0] PRINT_NEWLINE [38:14:newline] 
+ [39:0:blank] 	 [39:1:insn::1] JUMP_FORWARD [39:13:blank]            [39:23:symbol] label_1 [39:30:newline] 
+ [40:0:dir::line] .line [40:5:blank]   [40:6:integer::dec] 8 [40:7:newline] 
+ [41:0:symbol] label_0 [41:7:colon] : [41:8:newline] 
+ [42:0:blank] 	 [42:1:insn::1] LOAD_CONST [42:11:blank]              [42:23:integer::dec] 2 [42:24:blank] 	 [42:25:comment] # "nothing" [42:36:newline] 
+ [43:0:blank] 	 [43:1:insn::0] PRINT_ITEM [43:11:newline] 
+ [44:0:blank] 	 [44:1:insn::0] PRINT_NEWLINE [44:14:newline] 
+ [45:0:symbol] label_1 [45:7:colon] : [45:8:newline] 
+ [46:0:blank] 	 [46:1:insn::1] LOAD_CONST [46:11:blank]              [46:23:integer::dec] 3 [46:24:blank] 	 [46:25:comment] # None [46:31:newline] 
+ [47:0:blank] 	 [47:1:insn::0] RETURN_VALUE [47:13:newline] 
+ [48:0:newline] 
+ [49:0:comment] # Disassembled Tue Sep  7 02:46:51 2021 [49:39:newline] 
+ )
+# END Test stdout and stderr
+# TEST END   ###################################################################

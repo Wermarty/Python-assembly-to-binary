@@ -1,0 +1,154 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../definitionLexeme.txt 05_test_parser/04_fullcode_01_test_sujet.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+
+Parsing file pys
+Parsing end of line
+Parsing prologue
+Parsing set-directives
+Parsing set-version_pyvm
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-flags
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-filename
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-name
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-source_size
+Parsing blank
+Parsing set-stack_size
+Parsing blank
+Parsing end of line
+Parsing set-arg_count
+Parsing blank
+Parsing blank
+Parsing end of line
+Parsing set-kwonly_arg_count
+Parsing set-posonly_arg_count
+Parsing interned-strings
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing end of line
+Parsing constants
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing end of line
+Parsing constant
+Parsing tuple
+Parsing list
+Parsing names
+Parsing end of line
+Parsing end of line
+Parsing varnames
+Parsing freevars
+Parsing cellvars
+Parsing code
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing blank
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing label
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing assembly-line
+Parsing source-lineno
+Parsing insn
+Parsing end of line
+Parsing du fichier réussi
+()
+# END Test stdout and stderr
+# TEST END   ###################################################################

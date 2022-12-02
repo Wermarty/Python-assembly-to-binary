@@ -1,0 +1,45 @@
+# les échappements
+# commentaire non testé
+
+# échappement des caractères fin de ligne et tabulation
+
+'\n'
+
+'\t'
+
+'\r'
+
+# échappement des opérateurs d'expression régulière
+
+'\*'
+
+'\+'
+
+'\?'
+
+'\^'
+
+'\.'
+
+'\['
+
+'\]'
+
+# échappement de '\' pour le caractère '\'
+
+'\\'
+
+# tests diverses combinaisons échappements et opérateurs
+'\\+'
+
+'\n*'
+
+'\**'
+
+'\[*'
+
+'\[+'
+
+'^\n'
+
+'^\\'

@@ -16,15 +16,10 @@ extern "C" {
 #endif
 
 #include <pyas/list.h>
-#include <pyas/chargroup.h>
-#include <pyas/doclex.h>
-#include <pyas/parser.h>
 #include <pyas/regexp.h>
 #include <pyas/queue.h>
 
 #include <pyas/lexem.h>
-#include <pyas/pyobj.h>
-#include <pyas/py_codeblock.h>
 
 #ifdef __cplusplus
 }
