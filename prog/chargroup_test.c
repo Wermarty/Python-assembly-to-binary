@@ -8,13 +8,13 @@
 int main(int argc, char *argv[]){
 
   if (argc<2){
-    printf("Need more inputs : 'exe + regexp'\n");
+    printf("Need more inputs : '*.exe + regexp'\n");
     exit(EXIT_SUCCESS);
   }
 
   list_t chargroup_list = list_new();
 
-  chargroup_list = chargroup_reg2chargroup(argv[1]);
+  chargroup_list = chargroup_regexp2list(argv[1]);
 
   list_print(chargroup_list, chargroup_print);
 

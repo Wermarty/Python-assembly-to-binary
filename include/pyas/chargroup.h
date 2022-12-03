@@ -15,7 +15,7 @@ typedef struct chargroup *chargroup_t;
 chargroup_t chargroup_new();
 int chargroup_delete(void *chargroup_);
 
-list_t chargroup_reg2chargroup(char *src);
+list_t chargroup_regexp2list(char *src);
 
 int chargroup_print(void *chargroup_);
 

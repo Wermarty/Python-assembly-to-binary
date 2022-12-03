@@ -1,0 +1,12 @@
+#definition
+
+blank 	[\t ]+
+newline			\n+
+comment			\#^\n*
+paren::left			(
+paren::right		)
+brack::left			\[
+brack::right		\]
+colon						:
+semicolon				;
+string			"^[\n"]*"

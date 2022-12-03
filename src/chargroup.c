@@ -116,7 +116,7 @@ int chargroup_fill_multiple(chargroup_t chargroup, char **src){
   return 1;
 }
 
-list_t chargroup_reg2chargroup(char *src){
+list_t chargroup_regexp2list(char *src){
 
   chargroup_t chargroup;
   int reverse_chargroup = 0;
