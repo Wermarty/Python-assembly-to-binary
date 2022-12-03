@@ -13,16 +13,12 @@ struct chargroup{
   chargroup_operator_t operator;
 };
 
-
-//Need to check
 chargroup_t chargroup_new(){
   chargroup_t chargroup = calloc(1, sizeof(*chargroup));
-
   int i;
   for (i=0; i<TAB_DIMENSION; i++){
     chargroup->tab[i] = 0;
   }
-
   return chargroup;
 }
 
@@ -33,7 +29,6 @@ int chargroup_delete(void *chargroup_){
   return 1;
 }
 
-
 //I think it works but I need to verify
 void chargroup_reverse(chargroup_t chargroup){
   int i;
@@ -42,12 +37,17 @@ void chargroup_reverse(chargroup_t chargroup){
   }
 }
 
-int get_operator(char c, chargroup_operator_t *op){
-  switch(c){
-    case '*': *op = CHARGROUP_ZERO_OR_ONE; return 1;
-    case '+': *op = CHARGROUP_ONE_OR_MORE; return 1;
-    case '?': *op = CHARGROUP_ZERO_OR_ONE; return 1;
-    default : *op = CHARGROUP_NOTHING;     return 0;
+int get_operator(char *src, chargroup_operator_t *op){
+  if (*(src+1) == '\0'){
+    *op = CHARGROUP_NOTHING;
+    return 0;
+  }
+
+  switch(*(src+1)){
+    case '*': *op = CHARGROUP_ZERO_OR_MORE; return 1;
+    case '+': *op = CHARGROUP_ONE_OR_MORE;  return 1;
+    case '?': *op = CHARGROUP_ZERO_OR_ONE;  return 1;
+    default : *op = CHARGROUP_NOTHING;      return 0;
   }
 }
 
@@ -55,12 +55,11 @@ void chargroup_fill_unique(chargroup_t chargroup, char **src){
   chargroup->tab[(int)**src] = (char)1;
 
   chargroup_operator_t op;
-  if (get_operator(**(src+1), &op)){
+  if (get_operator(*src, &op)){
     (*src)++;
   }
   chargroup->operator = op;
   (*src)++;
-
 }
 
 int chargroup_fill_escaped(chargroup_t chargroup, char **src){
@@ -77,7 +76,7 @@ int chargroup_fill_escaped(chargroup_t chargroup, char **src){
 
   if (filled){
     chargroup_operator_t op;
-    if (get_operator(**(src+1), &op)){
+    if (get_operator(*src, &op)){
       (*src)++;
     }
     chargroup->operator = op;
@@ -88,21 +87,29 @@ int chargroup_fill_escaped(chargroup_t chargroup, char **src){
 
 
 int chargroup_fill_multiple(chargroup_t chargroup, char **src){
-  char car1 = **src;
-  char car2 = **(src+2);
-
-  if (car2 == '\0'){
+  if (*((*src)+2) == '\0'){
     printf("Reaching the end of the line\n");
     return 0;
   }
 
-  if((int)car1 >= (int)car2){
+  char car1 = *(*src);
+  char car2 = *((*src)+2);
+
+  if (car2 == '\\'){
+    if (*((*src)+3) == '\0'){
+      printf("Reaching the end of the line\n");
+      return 0;
+    }
+    car2 = *((*src)+3);
+  }
+
+  if(car1 >= car2){
     printf("Error with '-', %c should be lower than %c\n", car1, car2);
     return 0;
   }
   int i;
   for (i = (int)car1; i<(int)car2 +1; i++){
-    chargroup->tab[i] = (char)1;
+    chargroup->tab[(int)i] = (char)1;
   }
 
   *src += 3;
@@ -112,26 +119,24 @@ int chargroup_fill_multiple(chargroup_t chargroup, char **src){
 list_t chargroup_reg2chargroup(char *src){
 
   chargroup_t chargroup;
-
   int reverse_chargroup = 0;
 
   queue_t chargroup_queue = queue_new();
   assert (chargroup_queue);
 
-  char c = *src;
-  while(c != '\0'){
+  while(*src != '\0'){
 
     chargroup = chargroup_new();
     chargroup_operator_t op;
 
     //Si on a une negation
-    if (c == '^'){
+    if (*src == '^'){
       reverse_chargroup = 1;
       src++;
     }
 
     //On garde un if pour continuer
-    if (c == '\\'){
+    if (*src == '\\'){
       src++;
       if (!chargroup_fill_escaped(chargroup, &src)){
         //Si on a pas de caractère spéciaux à ne pas echapper
@@ -139,50 +144,53 @@ list_t chargroup_reg2chargroup(char *src){
       }
     }
 
-    else if(c == '-'){
+    else if(*src == '-' || *src == ']'){
       //Cas d'erreur
       printf("Error parsing regexp : '-' unavailable outside brackets\n");
       chargroup_delete(chargroup);
       exit(EXIT_FAILURE);
     }
 
-    else if(c == '.'){
+    else if(*src == '.'){
       //All is good
       int i;
       for (i=0; i<TAB_DIMENSION; i++){
         chargroup->tab[i] = (char)1;
         }
-      if (get_operator(c, &op)){
+      if (get_operator(src, &op)){
         src++;
       }
       chargroup->operator = op;
       src++;
     }
 
-    else if(c != '['){
+    else if(*src != '['){
       chargroup_fill_unique(chargroup, &src);
     }
 
     //Bracket's case
     else{
+
       src++;
-      while (*src != ']' || *src != '\0'){
+
+
+      while (*src != ']' && *src != '\0'){
         //Check if there's a backslash
-        if (c == '\\'){
+        if (*src == '\\'){
           src++;
           if (!chargroup_fill_escaped(chargroup, &src)){
             //Si on a pas de caractère spéciaux à ne pas echapper
             chargroup_fill_unique(chargroup, &src);
           }
         }
-        else if( *src == '*' || *src == '?' || *src == '+'){
+        else if( *src == '*' || *src == '?' || *src == '+' || *src == '^'){
           printf("Error inside brackets, can't use %c without espacing\n", *src);
           exit(EXIT_SUCCESS);
         }
 
         else if(*(src+1) == '-'){
           if (!chargroup_fill_multiple(chargroup, &src)){
-            printf("Error inside brackets : %c%c%c\n", *(src-1), *src, *(src+1));
+            printf("Error inside brackets : %c%c%c\n", *src, *(src+1), *(src+2));
             exit(EXIT_SUCCESS);
           }
         }
@@ -191,10 +199,16 @@ list_t chargroup_reg2chargroup(char *src){
           chargroup_fill_unique(chargroup, &src);
         }
       }
+
       if (*src == '\0'){
         printf("Need a closing brackets in the expression\n");
         exit(EXIT_FAILURE);
       }
+      if (get_operator(src, &op)){
+        src++;
+      }
+      chargroup->operator = op;
+      src++;
     }
 
     if (reverse_chargroup){
@@ -226,5 +240,6 @@ chargroup_t chargroup = (chargroup_t) chargroup_;
       printf("%c", (char)i);
     }
   }
+  printf("%c", '\n');
   return 1;
 }
