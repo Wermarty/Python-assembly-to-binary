@@ -135,6 +135,10 @@ list_t chargroup_regexp2list(char *src){
       src++;
     }
 
+    if (*src == '*' || *src == '?' || *src == '+'){
+      printf("Error parsing regexp : can't use operator alone\n");
+      exit(EXIT_FAILURE);
+    }
     //On garde un if pour continuer
     if (*src == '\\'){
       src++;
@@ -146,7 +150,12 @@ list_t chargroup_regexp2list(char *src){
 
     else if(*src == '-' || *src == ']'){
       //Cas d'erreur
-      printf("Error parsing regexp : '-' unavailable outside brackets\n");
+      if (*src == '-'){
+        printf("Error parsing regexp : '-' unavailable outside brackets\n");
+      }
+      else {
+        printf("Error parsing regexp : ']' need an opening bracket first\n");
+      }
       chargroup_delete(chargroup);
       exit(EXIT_FAILURE);
     }
@@ -170,14 +179,13 @@ list_t chargroup_regexp2list(char *src){
 
     //Bracket's case
     else{
-
       src++;
-
 
       while (*src != ']' && *src != '\0'){
         //Check if there's a backslash
         if (*src == '\\'){
           src++;
+
           if (!chargroup_fill_escaped(chargroup, &src)){
             //Si on a pas de caractère spéciaux à ne pas echapper
             chargroup_fill_unique(chargroup, &src);
@@ -240,6 +248,5 @@ chargroup_t chargroup = (chargroup_t) chargroup_;
       printf("%c", (char)i);
     }
   }
-  printf("%c", '\n');
   return 1;
 }
