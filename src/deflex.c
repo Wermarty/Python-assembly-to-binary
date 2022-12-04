@@ -8,7 +8,6 @@
 #include <pyas/chargroup.h>
 #include <pyas/deflex.h>
 
-#define _XOPEN_SOURCE = 700 //getline
 #define MAX_BUFFER_SIZE 256
 
 
@@ -41,6 +40,7 @@ void skip_space(char *buffer[MAX_BUFFER_SIZE]){
     (*buffer)++;
   }
 }
+
 void skip_not_space(char **buffer){
   while(**buffer != ' ' && **buffer != '\t' && **buffer != '\n'){
     if (**buffer == '\0'){
@@ -71,24 +71,34 @@ list_t deflex_file2list(char *filename){
 
   while (fgets(buffer, MAX_BUFFER_SIZE, f)){
 
-    char *end = buffer;
+    if (*buffer != '#' && *buffer != '\n'){
+      char *end = buffer;
+      skip_space(&end);
+      char *begining = end;
 
-    skip_space(&end);
-    char *begining = end;
+      skip_not_space(&end);
+      char temp_type[end-begining];
+      strncpy(temp_type, begining, end-begining); temp_type[end-begining] = '\0';
 
-    skip_not_space(&end);
-    char temp_type[end-begining];
-    strncpy(temp_type, begining, end-begining); temp_type[end-begining] = '\0';
+      skip_space(&end);
+      begining = end;
 
-    skip_space(&end);
-    begining = end;
-    while(*end != '\0'){
-      end++;
+      skip_not_space(&end);
+      if (*(end-1) == 't' && *(end-2) == '\\' && *(end+1) == ']'){
+        end += 3;
+      }
+      char temp_regexp[end-begining];
+      strncpy(temp_regexp, begining, end-begining); temp_regexp[end-begining] = '\0';
+
+      //Opcode pas fini
+      // while(*end != '\0'){
+      //   end++;
+      // }
+      // char temp_regexp[end-begining-1];
+      // strncpy(temp_regexp, begining, end-begining-1); temp_regexp[end-begining-1] = '\0';
+
+      deflex_queue = enqueue(deflex_queue, deflex_create(temp_type, temp_regexp));
     }
-    char temp_regexp[end-begining-1];
-    strncpy(temp_regexp, begining, end-begining-1); temp_regexp[end-begining-1] = '\0';
-
-    deflex_queue = enqueue(deflex_queue, deflex_create(temp_type, temp_regexp));
   }
 
   list_t deflex_list = list_new();
@@ -97,9 +107,6 @@ list_t deflex_file2list(char *filename){
   fclose(f);
   return deflex_list;
 }
-
-
-
 
 int deflex_print(void *deflex_){
   deflex_t deflex = (deflex_t)deflex_;
@@ -110,10 +117,6 @@ int deflex_print(void *deflex_){
   return 1;
 }
 
-
-
-
-
 int deflex_delete(void *deflex_){
   deflex_t deflex = (deflex_t)deflex_;
 
@@ -122,5 +125,4 @@ int deflex_delete(void *deflex_){
   free(deflex);
 
   return 1;
-
 }

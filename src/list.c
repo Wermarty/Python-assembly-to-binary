@@ -14,80 +14,80 @@
 
 #include <pyas/list.h>
 
-struct link_t { 
+struct link_t {
   void          *content;
-  struct link_t *next; 
-}; 
+  struct link_t *next;
+};
 
-list_t list_new( void ) { 
-  return NULL; 
+list_t list_new( void ) {
+  return NULL;
 }
 
-int    list_empty( list_t l ) { 
+int    list_empty( list_t l ) {
   return list_new() == l;
 }
 
-void*  list_first( list_t l ) { 
+void*  list_first( list_t l ) {
 
   assert( !list_empty( l ) );
-  
-  return l->content; 
+
+  return l->content;
 }
 
-list_t list_next( list_t l ) { 
+list_t list_next( list_t l ) {
 
   assert( !list_empty( l ) );
-  
-  return l->next; 
+
+  return l->next;
 }
 
-list_t list_add_first( list_t l, void* object ) { 
+list_t list_add_first( list_t l, void* object ) {
   struct link_t *new = malloc( sizeof( *new ) );
 
-  assert( new ); 
+  assert( new );
 
-  new->content = object; 
-  new->next    = l; 
-  
-  return new; 
+  new->content = object;
+  new->next    = l;
+
+  return new;
 }
 
-list_t list_del_first( list_t l, action_t delete ) { 
+list_t list_del_first( list_t l, action_t delete ) {
   list_t next;
-  
-  assert( !list_empty( l ) ); 
 
-  next = l->next; 
+  assert( !list_empty( l ) );
+
+  next = l->next;
 
   if ( delete ) delete( l->content );
 
   free( l );
-  
-  return next; 
+
+  return next;
 }
 
-size_t list_length( list_t l ) { 
+size_t list_length( list_t l ) {
   size_t len = 0;
-  
+
   for ( ; !list_empty( l ) ; l = list_next( l ), len++ );
-  
-  return len; 
+
+  return len;
 }
 
-int    list_print( list_t l, action_t print ) { 
-  int ret = printf( "(%s", list_empty( l ) ? "" : " " );
+int    list_print( list_t l, action_t print ) {
+  int ret = printf("(\n");
 
-  for ( ; !list_empty( l ) ; l = list_next( l ) ) { 
+  for ( ; !list_empty( l ) ; l = list_next( l ) ) {
     ret += print( list_first( l ) );
-    ret += printf( " " );
+    ret += printf( "\n" );
   }
-  
+
   ret += printf( ")" );
 
-  return ret; 
+  return ret;
 }
 
-void   list_delete( list_t l, action_t delete ) { 
+void   list_delete( list_t l, action_t delete ) {
 
   for ( ; !list_empty( l ) ; l = list_del_first( l, delete ) );
 }
