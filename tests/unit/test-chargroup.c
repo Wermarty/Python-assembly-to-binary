@@ -79,10 +79,6 @@ static void chargroup_basics( void ) {
   test_oracle( list_print(l, chargroup_print), "(\nError with '-', z should be lower than a\n\n)", "[z-a]\t\t");
   list_delete(l, chargroup_delete);
 
-  l = chargroup_regexp2list("[a-z*]");
-  test_oracle( list_print(l, chargroup_print), "(\nError inside brackets, can't use * without espacing\n\n)", "[a-z*]\t");
-  list_delete(l, chargroup_delete);
-
   l = chargroup_regexp2list("a**");
   test_oracle( list_print(l, chargroup_print), "(\nError parsing regexp : can't use operator alone\n\n", "a**\t\t");
   list_delete(l, chargroup_delete);

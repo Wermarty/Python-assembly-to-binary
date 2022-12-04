@@ -188,12 +188,8 @@ list_t chargroup_regexp2list(char *src){
 
           if (!chargroup_fill_escaped(chargroup, &src)){
             //Si on a pas de caractère spéciaux à ne pas echapper
-            chargroup_fill_unique(chargroup, &src);
+            chargroup->tab[(int)*src] = (char)1;
           }
-        }
-        else if( *src == '*' || *src == '?' || *src == '+' || *src == '^'){
-          printf("Error inside brackets, can't use %c without espacing\n", *src);
-          exit(EXIT_SUCCESS);
         }
 
         else if(*(src+1) == '-'){
@@ -204,7 +200,8 @@ list_t chargroup_regexp2list(char *src){
         }
 
         else{
-          chargroup_fill_unique(chargroup, &src);
+          chargroup->tab[(int)*src] = (char)1;
+          src++;
         }
       }
 
